@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3490d047c197843b16cee5c2637a82, type: 3}
-  m_Name: Book
+  m_Script: {fileID: 11500000, guid: 2cc826b469fd8544481499277aaba5e9, type: 3}
+  m_Name: Round-10
   m_EditorClassIdentifier: 
-  presentName: Book
-  hint: Holding adventures or happy endings.
-  guessingOptions:
-  - Book
-  - Phone
-  - Tablet
+  present: {fileID: 11400000, guid: cdd1eaf03ef9ff646ae03394f7740382, type: 2}
