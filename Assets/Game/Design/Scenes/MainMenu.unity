@@ -157,6 +157,8 @@ MonoBehaviour:
   - enabled: 1
     system: {fileID: 11400000, guid: 7be89b1cc8e26374495b6ecdbf521eab, type: 2}
   - enabled: 1
+    system: {fileID: 11400000, guid: bfab3b2f99482b240bec53d0506beb96, type: 2}
+  - enabled: 1
     system: {fileID: 11400000, guid: 2b39ea23e3e4f7549b2fc1913a877703, type: 2}
   - enabled: 1
     system: {fileID: 11400000, guid: 509e635808f08f243bc1947415b3b673, type: 2}

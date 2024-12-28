@@ -38,7 +38,7 @@ public sealed class RoundStartSystem : UpdateSystem
 
                     uiComponent.uIController.roundCounter.SetText($"{currentRound.value + 1}/{roundsConfig.rounds.Count}");
 
-                    List<TMP_Text> buttonsLeft = new List<TMP_Text>(uiComponent.uIController.selectionButtons);
+                    List<TMP_Text> buttonsLeft = new List<TMP_Text>(uiComponent.uIController.selectionTexts);
                     var correctAnswer = buttonsLeft[Random.Range(0, buttonsLeft.Count - 1)];
                     correctAnswer.SetText(roundsConfig.rounds[currentRound.value].present.presentName);
                     buttonsLeft.Remove(correctAnswer);

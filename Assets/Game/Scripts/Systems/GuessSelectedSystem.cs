@@ -30,11 +30,11 @@ public sealed class GuessSelectedSystem : UpdateSystem
             foreach (var uiEntity in ui)
             {
                 ref var uiComponent = ref uiEntity.GetComponent<GameUIComponent>();
-                var choice = uiComponent.uIController.selectionButtons[result].text;
+                var choice = uiComponent.uIController.selectionTexts[result].text;
 
-                foreach (var presentUi in presents)
+                foreach (var present in presents)
                 {
-                    ref var presentComponent = ref presentUi.GetComponent<PresentComponent>();
+                    ref var presentComponent = ref present.GetComponent<PresentComponent>();
                     if (presentComponent.presentData.presentName.Equals(choice))
                     {
                         //* correct
@@ -54,6 +54,9 @@ public sealed class GuessSelectedSystem : UpdateSystem
                         uiComponent.uIController.description.SetText($"This is {presentComponent.presentData.presentName}");
                         uiComponent.uIController.nextPresentButton.gameObject.SetActive(false);
                     }
+
+                    present.RemoveComponent<CurrentPresentComponent>();
+                    break;
                 }
             }
         }
