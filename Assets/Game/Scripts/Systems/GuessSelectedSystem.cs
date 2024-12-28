@@ -13,13 +13,16 @@ using Unity.VisualScripting;
 [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(GuessSelectedSystem))]
 public sealed class GuessSelectedSystem : UpdateSystem
 {
+    public GlobalEvent defeatEvent;
     public GlobalEventInt buttonSelected;
     private Filter ui;
+    private Filter gameData;
     private Filter presents;
     public override void OnAwake()
     {
         presents = this.World.Filter.With<CurrentPresentComponent>().With<PresentComponent>().Build();
         ui = this.World.Filter.With<GameUIComponent>().Build();
+        gameData = this.World.Filter.With<GameDataComponent>().Build();
     }
 
     public override void OnUpdate(float deltaTime)
@@ -53,6 +56,14 @@ public sealed class GuessSelectedSystem : UpdateSystem
                         uiComponent.uIController.description.gameObject.SetActive(true);
                         uiComponent.uIController.description.SetText($"This is {presentComponent.presentData.presentName}");
                         uiComponent.uIController.nextPresentButton.gameObject.SetActive(true);
+
+                        ref var gameDataComponent = ref gameData.FirstOrDefault().GetComponent<GameDataComponent>();
+                        gameDataComponent.currentMistakes++;
+                        if(gameDataComponent.currentMistakes > gameDataComponent.gameConfig.mistakesAllowed)
+                        {
+                            defeatEvent.Publish();
+                            return;
+                        }
                     }
 
                     present.RemoveComponent<CurrentPresentComponent>();
