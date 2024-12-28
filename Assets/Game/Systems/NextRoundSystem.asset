@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextRoundEvent: {fileID: 11400000, guid: 2c20f848593a81e46942b6b6581e7532, type: 2}
   roundStartEvent: {fileID: 11400000, guid: 3dcf16acbe58bf54691272567892bce6, type: 2}
+  victoryEvent: {fileID: 11400000, guid: 08e08327e73745448b48862a48619c4e, type: 2}
+  roundsConfig: {fileID: 11400000, guid: cf6e1741a6221984c8c00e75da0f40da, type: 2}

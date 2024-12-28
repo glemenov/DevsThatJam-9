@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc826b469fd8544481499277aaba5e9, type: 3}
   m_Name: Round-1
   m_EditorClassIdentifier: 
-  present: {fileID: 11400000, guid: 251beb56b2738924ba8272ee815bc83d, type: 2}
+  possiblePresents:
+  - {fileID: 11400000, guid: 251beb56b2738924ba8272ee815bc83d, type: 2}
+  - {fileID: 11400000, guid: 571c33e814a34f44f80dc728d8e4e591, type: 2}
