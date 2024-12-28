@@ -40,20 +40,22 @@ public sealed class RoundStartSystem : UpdateSystem
 
                     List<TMP_Text> buttonsLeft = new List<TMP_Text>(uiComponent.uIController.selectionTexts);
                     var correctAnswer = buttonsLeft[Random.Range(0, buttonsLeft.Count - 1)];
-                    correctAnswer.SetText(roundsConfig.rounds[currentRound.value].present.presentName);
+                    var randomPresent = roundsConfig.rounds[currentRound.value].
+                    possiblePresents[Random.Range(0, roundsConfig.rounds[currentRound.value].possiblePresents.Count)];
+                    correctAnswer.SetText(randomPresent.presentName);
                     buttonsLeft.Remove(correctAnswer);
 
                     foreach (var present in presents)
                     {
                         ref var presentComponent = ref present.GetComponent<PresentComponent>();
-                        if(presentComponent.presentData.presentName == roundsConfig.rounds[currentRound.value].present.presentName)
+                        if(presentComponent.presentData.presentName == randomPresent.presentName)
                         {
                             present.AddComponent<CurrentPresentComponent>();
                             break;
                         }
                     }
 
-                    foreach (var option in roundsConfig.rounds[currentRound.value].present.guessingOptions)
+                    foreach (var option in randomPresent.guessingOptions)
                     {
                         var selectedButton = buttonsLeft[Random.Range(0, buttonsLeft.Count - 1)];
                         selectedButton.SetText(option);

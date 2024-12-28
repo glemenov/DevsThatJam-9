@@ -12,6 +12,8 @@ public sealed class NextRoundSystem : UpdateSystem
 {
     public GlobalEvent nextRoundEvent;
     public GlobalEvent roundStartEvent;
+    public GlobalEvent victoryEvent;
+    public RoundsConfig roundsConfig;
     private Filter roundEntities;
     private Filter ui;
     public override void OnAwake()
@@ -28,6 +30,12 @@ public sealed class NextRoundSystem : UpdateSystem
             {
                 ref var currentRound = ref round.GetComponent<CurrentRoundComponent>();
                 currentRound.value++;
+
+                if(currentRound.value == roundsConfig.rounds.Count)
+                {
+                    victoryEvent.Publish();
+                    return;
+                }
             }
 
             foreach (var uiEntity in this.ui)

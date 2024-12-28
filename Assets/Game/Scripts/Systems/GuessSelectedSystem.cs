@@ -52,7 +52,7 @@ public sealed class GuessSelectedSystem : UpdateSystem
                         uiComponent.uIController.mistakeText.SetActive(true);
                         uiComponent.uIController.description.gameObject.SetActive(true);
                         uiComponent.uIController.description.SetText($"This is {presentComponent.presentData.presentName}");
-                        uiComponent.uIController.nextPresentButton.gameObject.SetActive(false);
+                        uiComponent.uIController.nextPresentButton.gameObject.SetActive(true);
                     }
 
                     present.RemoveComponent<CurrentPresentComponent>();
