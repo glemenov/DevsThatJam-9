@@ -15,6 +15,5 @@ MonoBehaviour:
   presentName: Mug
   hint: Holding warmth on chilly mornings.
   guessingOptions:
-  - Mug
   - Plant
   - Controller

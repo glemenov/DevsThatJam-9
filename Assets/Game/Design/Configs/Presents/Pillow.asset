@@ -15,6 +15,5 @@ MonoBehaviour:
   presentName: Pillow
   hint: "It\u2019s a soft and fluffy object."
   guessingOptions:
-  - Pillow
   - Handbag
   - Earmuffs

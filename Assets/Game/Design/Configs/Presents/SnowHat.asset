@@ -15,6 +15,5 @@ MonoBehaviour:
   presentName: Snow Hat
   hint: "It\u2019s a cozy accessory."
   guessingOptions:
-  - Snow Hat
   - Controllers
   - Earmuffs

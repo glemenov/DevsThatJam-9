@@ -15,6 +15,5 @@ MonoBehaviour:
   presentName: Book
   hint: Holding adventures or happy endings.
   guessingOptions:
-  - Book
   - Phone
   - Tablet

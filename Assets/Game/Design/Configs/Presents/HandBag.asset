@@ -15,6 +15,5 @@ MonoBehaviour:
   presentName: Hand Bag
   hint: A stylish carrier.
   guessingOptions:
-  - Hand Bag
   - Pillow
   - Tablet

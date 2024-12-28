@@ -16,5 +16,4 @@ MonoBehaviour:
   hint: Transport you into another realm
   guessingOptions:
   - Earmuffs
-  - Headset
   - Controller

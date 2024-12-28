@@ -15,6 +15,5 @@ MonoBehaviour:
   presentName: Plant
   hint: Loves to grow.
   guessingOptions:
-  - Plant
   - Mug
   - Pillow
