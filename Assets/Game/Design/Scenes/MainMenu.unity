@@ -162,6 +162,8 @@ MonoBehaviour:
     system: {fileID: 11400000, guid: 2b39ea23e3e4f7549b2fc1913a877703, type: 2}
   - enabled: 1
     system: {fileID: 11400000, guid: 509e635808f08f243bc1947415b3b673, type: 2}
+  - enabled: 1
+    system: {fileID: 11400000, guid: 206836fe237b4074bab3c0343c46c8ed, type: 2}
   fixedUpdateSystems: []
   lateUpdateSystems: []
   cleanupSystems: []
@@ -852,6 +854,7 @@ GameObject:
   - component: {fileID: 1657163598}
   - component: {fileID: 1657163597}
   - component: {fileID: 1657163596}
+  - component: {fileID: 1657163600}
   m_Layer: 5
   m_Name: MainMenuCanvas
   m_TagString: Untagged
@@ -943,6 +946,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1657163600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657163595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f0b7be901c6ec4e992bb040bba2d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitEvent: {fileID: 11400000, guid: 0e10d3d7a19b93248a850037af845872, type: 2}
 --- !u!1 &2074968892
 GameObject:
   m_ObjectHideFlags: 0
