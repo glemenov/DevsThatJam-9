@@ -5,6 +5,6 @@ using UnityEngine;
 public class Present : ScriptableObject
 {
     public string presentName;
-    public GameObject prefab;
+    public string hint;
     public List<string> guessingOptions = new List<string>();
 }
