@@ -3,6 +3,8 @@ using UnityEngine;
 using Unity.IL2CPP.CompilerServices;
 using Scellecs.Morpeh.Globals.Events;
 using Scellecs.Morpeh;
+using System.Collections.Generic;
+using TMPro;
 
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
@@ -14,10 +16,12 @@ public sealed class RoundStartSystem : UpdateSystem
     public RoundsConfig roundsConfig;
     private Filter ui;
     private Filter filter;
+    private Filter presents;
     public override void OnAwake()
     {
         this.filter = this.World.Filter.With<CurrentRoundComponent>().Build();
         this.ui = this.World.Filter.With<GameUIComponent>().Build();
+        presents = this.World.Filter.With<PresentComponent>().Build();
     }
 
     public override void OnUpdate(float deltaTime)
@@ -32,12 +36,22 @@ public sealed class RoundStartSystem : UpdateSystem
                 {
                     ref var uiComponent = ref uiEntity.GetComponent<GameUIComponent>();
 
-                    uiComponent.uIController.roundCounter.SetText($"{currentRound.value+1}/{roundsConfig.rounds.Count}");
+                    uiComponent.uIController.roundCounter.SetText($"{currentRound.value + 1}/{roundsConfig.rounds.Count}");
 
-                    var buttonsLeft = uiComponent.uIController.selectionButtons;
+                    List<TMP_Text> buttonsLeft = new List<TMP_Text>(uiComponent.uIController.selectionButtons);
                     var correctAnswer = buttonsLeft[Random.Range(0, buttonsLeft.Count - 1)];
                     correctAnswer.SetText(roundsConfig.rounds[currentRound.value].present.presentName);
                     buttonsLeft.Remove(correctAnswer);
+
+                    foreach (var present in presents)
+                    {
+                        ref var presentComponent = ref present.GetComponent<PresentComponent>();
+                        if(presentComponent.presentData.presentName == roundsConfig.rounds[currentRound.value].present.presentName)
+                        {
+                            present.AddComponent<CurrentPresentComponent>();
+                            break;
+                        }
+                    }
 
                     foreach (var option in roundsConfig.rounds[currentRound.value].present.guessingOptions)
                     {
