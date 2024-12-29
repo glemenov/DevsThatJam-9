@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possiblePresents:
   - {fileID: 11400000, guid: 7ef79229f921ee84097ac8729d62e36e, type: 2}
-  - {fileID: 11400000, guid: 7061c39486e6b2a48b27a748068931e8, type: 2}
+  - {fileID: 11400000, guid: c66e16ed0bb63f047b465dfa944edce6, type: 2}

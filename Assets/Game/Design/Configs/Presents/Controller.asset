@@ -15,5 +15,5 @@ MonoBehaviour:
   presentName: Controller
   hint: Requiring both hands to command.
   guessingOptions:
-  - Pillow
+  - Headset
   - Snow Hat

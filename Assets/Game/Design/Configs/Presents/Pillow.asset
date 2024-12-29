@@ -16,4 +16,4 @@ MonoBehaviour:
   hint: "It\u2019s a soft and fluffy object."
   guessingOptions:
   - Handbag
-  - Earmuffs
+  - Book

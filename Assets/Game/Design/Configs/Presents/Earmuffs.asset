@@ -15,5 +15,5 @@ MonoBehaviour:
   presentName: Earmuffs
   hint: A snug accessory.
   guessingOptions:
-  - Pillow
+  - Headset
   - Snow Hat
