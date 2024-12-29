@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using Scellecs.Morpeh;
 using Unity.VisualScripting;
+using Ami.BroAudio;
 
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
@@ -13,6 +14,7 @@ using Unity.VisualScripting;
 [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(GuessSelectedSystem))]
 public sealed class GuessSelectedSystem : UpdateSystem
 {
+    public SFXConfig sFXConfig;
     public GlobalEventString unwrapEvent;
     public GlobalEvent defeatEvent;
     public GlobalEventInt buttonSelected;
@@ -44,16 +46,21 @@ public sealed class GuessSelectedSystem : UpdateSystem
                     if (presentComponent.presentData.presentName.Equals(choice))
                     {
                         //* correct
+                        BroAudio.Play(sFXConfig.correctGuess);
+
                         uiComponent.uIController.correctText.SetActive(true);
                         uiComponent.uIController.mistakeText.SetActive(false);
                         uiComponent.uIController.description.gameObject.SetActive(true);
                         uiComponent.uIController.description.SetText($"This is {presentComponent.presentData.presentName}");
                         uiComponent.uIController.nextPresentButton.gameObject.SetActive(true);
 
+
                     }
                     else
                     {
                         //* mistake
+                        BroAudio.Play(sFXConfig.wrongGuess);
+
                         uiComponent.uIController.correctText.SetActive(false);
                         uiComponent.uIController.mistakeText.SetActive(true);
                         uiComponent.uIController.description.gameObject.SetActive(true);

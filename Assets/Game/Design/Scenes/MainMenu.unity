@@ -2283,6 +2283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49285ba4c8d61e540b174ada1cffa4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuMusic:
+    ID: 268435458
+    _sourceAsset: {fileID: 11400000, guid: fa8f02e79b1caff448eef72c0c470806, type: 2}
+    <DebugObject>k__BackingField: {fileID: 814318421}
   gameStart: {fileID: 11400000, guid: 8a73c4cdb5a3ba044974e87ce0060b74, type: 2}
   exitToMainMenu: {fileID: 11400000, guid: 0e10d3d7a19b93248a850037af845872, type: 2}
   mainCamera: {fileID: 330585545}

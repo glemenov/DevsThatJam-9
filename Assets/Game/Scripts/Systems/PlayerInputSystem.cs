@@ -27,7 +27,6 @@ public sealed class PlayerInputSystem : UpdateSystem
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Click");
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             // debug Ray
             Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.red);

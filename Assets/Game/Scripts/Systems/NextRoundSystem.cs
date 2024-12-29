@@ -3,6 +3,7 @@ using UnityEngine;
 using Unity.IL2CPP.CompilerServices;
 using Scellecs.Morpeh.Globals.Events;
 using Scellecs.Morpeh;
+using Ami.BroAudio;
 
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
@@ -10,6 +11,7 @@ using Scellecs.Morpeh;
 [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(NextRoundSystem))]
 public sealed class NextRoundSystem : UpdateSystem
 {
+    public SFXConfig sFXConfig;
     public GlobalEvent nextRoundEvent;
     public GlobalEvent roundStartEvent;
     public GlobalEvent victoryEvent;
@@ -46,6 +48,7 @@ public sealed class NextRoundSystem : UpdateSystem
             }
 
             roundStartEvent.Publish();
+            BroAudio.Play(sFXConfig.nextGift);
         }
     }
 }

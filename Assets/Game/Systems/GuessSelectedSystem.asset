@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd344a7586b89c646b009969e45cbda5, type: 3}
   m_Name: GuessSelectedSystem
   m_EditorClassIdentifier: 
+  sFXConfig: {fileID: 11400000, guid: e6770b7d46255d84fa57dbe63be46f2b, type: 2}
   unwrapEvent: {fileID: 11400000, guid: cd251fdd625daac4babe9533dc2881ef, type: 2}
   defeatEvent: {fileID: 11400000, guid: 5906bf70d2283b048b3fe530064c7568, type: 2}
   buttonSelected: {fileID: 11400000, guid: 4c6d3d9b24ed1854daee0ecaf683a0c3, type: 2}
