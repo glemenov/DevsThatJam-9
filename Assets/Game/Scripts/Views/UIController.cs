@@ -7,13 +7,13 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
     public TMP_Text roundCounter;
+    public TMP_Text hintText;
     public GameObject correctText;
     public GameObject mistakeText;
     public GameObject nextPresentButton;
     public TMP_Text description;
     public List<TMP_Text> selectionTexts;
     public List<Button> selectionButtons;
-
 
     private void Awake()
     {
@@ -27,6 +27,7 @@ public class UIController : MonoBehaviour
     {
         correctText.SetActive(false);
         mistakeText.SetActive(false);
+        hintText.gameObject.SetActive(false);
         description.gameObject.SetActive(false);
         nextPresentButton.SetActive(false);
 
