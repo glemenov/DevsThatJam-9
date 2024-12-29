@@ -2,6 +2,7 @@ using Scellecs.Morpeh;
 using UnityEngine;
 using Unity.IL2CPP.CompilerServices;
 using TMPro;
+using Scellecs.Morpeh.Globals.Events;
 
 [System.Serializable]
 [Il2CppSetOption(Option.NullChecks, false)]
@@ -10,4 +11,5 @@ using TMPro;
 public struct InteractableComponent : IComponent {
     public TMP_Text hoverText;
     public string displayText;
+    public GlobalEvent triggerEvent;
 }

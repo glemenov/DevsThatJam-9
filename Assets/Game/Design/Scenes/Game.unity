@@ -2254,6 +2254,8 @@ MonoBehaviour:
   updateSystems:
   - enabled: 1
     system: {fileID: 11400000, guid: 498f547753fbbbd42847877f7db8eac1, type: 2}
+  - enabled: 1
+    system: {fileID: 11400000, guid: bdc6b3e314004ea419dcf88fcdc92f45, type: 2}
   fixedUpdateSystems: []
   lateUpdateSystems: []
   cleanupSystems: []
@@ -3525,6 +3527,7 @@ MonoBehaviour:
   serializedData:
     hoverText: {fileID: 58788865}
     displayText: Exit?
+    triggerEvent: {fileID: 11400000, guid: 0e10d3d7a19b93248a850037af845872, type: 2}
 --- !u!1 &976047548
 GameObject:
   m_ObjectHideFlags: 0

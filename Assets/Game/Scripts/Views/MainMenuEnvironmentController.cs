@@ -8,18 +8,22 @@ public class MainMenuEnvironmentController : MonoBehaviour
     public GlobalEvent gameStart;
     public GlobalEvent exitToMainMenu;
     public Camera mainCamera;
+    public GameObject visuals;
+    public GameObject lights;
 
     private void Update()
     {
         if(gameStart.IsPublished) 
         {
-            mainCamera.gameObject.SetActive(false);
-            gameObject.SetActive(false);
+            mainCamera.enabled = false;
+            visuals.SetActive(false);
+            lights.SetActive(false);
         }
         if(exitToMainMenu.IsPublished) 
         {
-            mainCamera.gameObject.SetActive(true);
-            gameObject.SetActive(true);
+            mainCamera.enabled = true;
+            visuals.SetActive(true);
+            lights.SetActive(true);
         }
     }
 }
