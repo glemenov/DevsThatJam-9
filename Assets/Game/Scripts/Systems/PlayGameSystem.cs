@@ -4,6 +4,7 @@ using Unity.IL2CPP.CompilerServices;
 using Scellecs.Morpeh;
 using Scellecs.Morpeh.Globals.Events;
 using UnityEngine.SceneManagement;
+using Ami.BroAudio;
 
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
@@ -11,6 +12,7 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(PlayGameSystem))]
 public sealed class PlayGameSystem : UpdateSystem
 {
+    public SoundID gameplayMusic;
     private Filter filter;
     public GlobalEvent startEvent;
     public GlobalEvent roundStartEvent;
@@ -23,7 +25,10 @@ public sealed class PlayGameSystem : UpdateSystem
     public override void OnUpdate(float deltaTime)
     {
         if (startEvent.IsPublished) {
-            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive).completed += ev => {roundStartEvent.Publish();};
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive).completed += ev => {
+                roundStartEvent.Publish();
+                BroAudio.Play(gameplayMusic).AsBGM();
+                };
         }
     }
 }

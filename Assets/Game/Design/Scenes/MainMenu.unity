@@ -2684,6 +2684,7 @@ GameObject:
   - component: {fileID: 863514162}
   - component: {fileID: 863514161}
   - component: {fileID: 863514160}
+  - component: {fileID: 863514163}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -2709,7 +2710,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 208.9185, y: 65.7273}
+  m_SizeDelta: {x: 223.3118, y: 103.7396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863514160
 MonoBehaviour:
@@ -2787,8 +2788,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1714860238, guid: 76a0eb800023814428f0feefa8536861, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2805,6 +2806,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863514158}
   m_CullTransparentMesh: 1
+--- !u!114 &863514163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863514158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97203fad97be59b4ea7f31945b363d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 1.2
+  timeToGrow: 0.4
+  timeToShrink: 0.4
 --- !u!1001 &889047510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3982,6 +3998,7 @@ GameObject:
   - component: {fileID: 1142049685}
   - component: {fileID: 1142049684}
   - component: {fileID: 1142049683}
+  - component: {fileID: 1142049686}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -4007,7 +4024,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 136}
-  m_SizeDelta: {x: 275.8999, y: 99.218}
+  m_SizeDelta: {x: 346.4373, y: 131.1007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1142049683
 MonoBehaviour:
@@ -4097,8 +4114,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1714860238, guid: 76a0eb800023814428f0feefa8536861, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4115,6 +4132,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142049681}
   m_CullTransparentMesh: 1
+--- !u!114 &1142049686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142049681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97203fad97be59b4ea7f31945b363d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleFactor: 1.2
+  timeToGrow: 0.4
+  timeToShrink: 0.4
 --- !u!1 &1239537843
 GameObject:
   m_ObjectHideFlags: 0
@@ -4149,7 +4181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1239537845
