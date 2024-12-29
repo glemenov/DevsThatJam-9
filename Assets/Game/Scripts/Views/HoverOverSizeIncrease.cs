@@ -16,7 +16,6 @@ public class HoverOverSizeIncrease : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("hovering");
         transform.DOScale(new Vector3(_defaultScale.x * scaleFactor, _defaultScale.y * scaleFactor, _defaultScale.z * scaleFactor), timeToGrow).SetUpdate(true);
     }
 

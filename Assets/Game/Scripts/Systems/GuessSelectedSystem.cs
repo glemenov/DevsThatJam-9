@@ -18,14 +18,18 @@ public sealed class GuessSelectedSystem : UpdateSystem
     public GlobalEventString unwrapEvent;
     public GlobalEvent defeatEvent;
     public GlobalEventInt buttonSelected;
+    public GlobalEventInt correctEvent;
+    public GlobalEventInt mistakeEvent;
     private Filter ui;
     private Filter gameData;
     private Filter presents;
+    private Filter roundData;
     public override void OnAwake()
     {
         presents = this.World.Filter.With<CurrentPresentComponent>().With<PresentComponent>().Build();
         ui = this.World.Filter.With<GameUIComponent>().Build();
         gameData = this.World.Filter.With<GameDataComponent>().Build();
+        roundData = this.World.Filter.With<CurrentRoundComponent>().Build();
     }
 
     public override void OnUpdate(float deltaTime)
@@ -42,11 +46,13 @@ public sealed class GuessSelectedSystem : UpdateSystem
                 {
                     ref var presentComponent = ref present.GetComponent<PresentComponent>();
                     unwrapEvent.Publish(presentComponent.presentData.presentName);
+                    ref var currentRound = ref roundData.FirstOrDefault().GetComponent<CurrentRoundComponent>();
 
                     if (presentComponent.presentData.presentName.Equals(choice))
                     {
                         //* correct
                         BroAudio.Play(sFXConfig.correctGuess);
+                        correctEvent.Publish(currentRound.value);
 
                         uiComponent.uIController.correctText.SetActive(true);
                         uiComponent.uIController.mistakeText.SetActive(false);
@@ -60,6 +66,7 @@ public sealed class GuessSelectedSystem : UpdateSystem
                     {
                         //* mistake
                         BroAudio.Play(sFXConfig.wrongGuess);
+                        mistakeEvent.Publish(currentRound.value);
 
                         uiComponent.uIController.correctText.SetActive(false);
                         uiComponent.uIController.mistakeText.SetActive(true);
@@ -69,7 +76,7 @@ public sealed class GuessSelectedSystem : UpdateSystem
 
                         ref var gameDataComponent = ref gameData.FirstOrDefault().GetComponent<GameDataComponent>();
                         gameDataComponent.currentMistakes++;
-                        if(gameDataComponent.currentMistakes > gameDataComponent.gameConfig.mistakesAllowed)
+                        if (gameDataComponent.currentMistakes > gameDataComponent.gameConfig.mistakesAllowed)
                         {
                             defeatEvent.Publish();
                             return;

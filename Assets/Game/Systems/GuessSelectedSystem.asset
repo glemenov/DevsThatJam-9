@@ -16,3 +16,5 @@ MonoBehaviour:
   unwrapEvent: {fileID: 11400000, guid: cd251fdd625daac4babe9533dc2881ef, type: 2}
   defeatEvent: {fileID: 11400000, guid: 5906bf70d2283b048b3fe530064c7568, type: 2}
   buttonSelected: {fileID: 11400000, guid: 4c6d3d9b24ed1854daee0ecaf683a0c3, type: 2}
+  correctEvent: {fileID: 11400000, guid: 3531647c6d5adc940a96cb9072efae05, type: 2}
+  mistakeEvent: {fileID: 11400000, guid: 215efb83d7238ca4a8fba6e42e139fd9, type: 2}
