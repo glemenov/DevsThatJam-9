@@ -24,6 +24,7 @@ public sealed class HintDisplaySystem : UpdateSystem
     {
         if (hintShow.IsPublished)
         {
+            if(presents.GetLengthSlow() == 0) return;
             ref var uiComponent = ref ui.FirstOrDefault().GetComponent<GameUIComponent>();
             ref var presentComponent = ref presents.FirstOrDefault().GetComponent<PresentComponent>();
 

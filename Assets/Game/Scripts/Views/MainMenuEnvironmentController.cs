@@ -32,7 +32,10 @@ public class MainMenuEnvironmentController : MonoBehaviour
             visuals.SetActive(true);
             lights.SetActive(true);
             BroAudio.Stop(BroAudioType.Music);
-            BroAudio.Play(mainMenuMusic).AsBGM();
+            BroAudio.Stop(BroAudioType.Ambience);
+            BroAudio.Stop(BroAudioType.SFX);
+
+            BroAudio.UnPause(mainMenuMusic);
         }
     }
 }
