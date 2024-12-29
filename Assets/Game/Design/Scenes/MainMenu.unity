@@ -628,6 +628,8 @@ MonoBehaviour:
     system: {fileID: 11400000, guid: f0fb777344c99b64ca11008ee272478c, type: 2}
   - enabled: 1
     system: {fileID: 11400000, guid: 6b546df0f33f50a4e9ed185943ea419a, type: 2}
+  - enabled: 1
+    system: {fileID: 11400000, guid: abb3777186647fc439125bc7b8704f25, type: 2}
   fixedUpdateSystems: []
   lateUpdateSystems: []
   cleanupSystems: []
@@ -2287,6 +2289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStart: {fileID: 11400000, guid: 8a73c4cdb5a3ba044974e87ce0060b74, type: 2}
   exitToMainMenu: {fileID: 11400000, guid: 0e10d3d7a19b93248a850037af845872, type: 2}
+  mainCamera: {fileID: 330585545}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
