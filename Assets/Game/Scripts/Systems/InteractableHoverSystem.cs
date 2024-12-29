@@ -19,18 +19,21 @@ public sealed class InteractableHoverSystem : UpdateSystem
     {
         foreach (var interactable in interactables)
         {
-            var hoverText = interactable.GetComponent<InteractableComponent>().hoverText;
+            var interactableComponent = interactable.GetComponent<InteractableComponent>();
+            var hoverText = interactableComponent.hoverText;
 
             if (interactable.Has<InteractableHoveredComponent>())
             {
-                var displayText = interactable.GetComponent<InteractableComponent>().displayText;
+                var displayText = interactableComponent.displayText;
                 hoverText.SetText(displayText);
                 hoverText.gameObject.SetActive(true);
+                if(interactableComponent.light != null) interactableComponent.light.enabled = true;
                 // interactable.GetComponent<InteractableComponent>().hoverText.transform.LookAt(Camera.main.transform);
             }
             else
             {
                 hoverText.gameObject.SetActive(false);
+                if(interactableComponent.light != null) interactableComponent.light.enabled = false;
             }
         }
     }
