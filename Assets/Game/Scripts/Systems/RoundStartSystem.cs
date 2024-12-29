@@ -48,10 +48,12 @@ public sealed class RoundStartSystem : UpdateSystem
                     foreach (var present in presents)
                     {
                         ref var presentComponent = ref present.GetComponent<PresentComponent>();
-                        if(presentComponent.presentData.presentName == randomPresent.presentName)
+                        presentComponent.presentView.HidePresent();
+
+                        if (presentComponent.presentData.presentName == randomPresent.presentName)
                         {
                             present.AddComponent<CurrentPresentComponent>();
-                            break;
+                            presentComponent.presentView.wrapped.SetActive(true);
                         }
                     }
 

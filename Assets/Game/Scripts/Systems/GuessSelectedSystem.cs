@@ -13,6 +13,7 @@ using Unity.VisualScripting;
 [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(GuessSelectedSystem))]
 public sealed class GuessSelectedSystem : UpdateSystem
 {
+    public GlobalEventString unwrapEvent;
     public GlobalEvent defeatEvent;
     public GlobalEventInt buttonSelected;
     private Filter ui;
@@ -38,6 +39,8 @@ public sealed class GuessSelectedSystem : UpdateSystem
                 foreach (var present in presents)
                 {
                     ref var presentComponent = ref present.GetComponent<PresentComponent>();
+                    unwrapEvent.Publish(presentComponent.presentData.presentName);
+
                     if (presentComponent.presentData.presentName.Equals(choice))
                     {
                         //* correct
