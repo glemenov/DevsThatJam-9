@@ -12,6 +12,7 @@ using Ami.BroAudio;
 [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(PlayGameSystem))]
 public sealed class PlayGameSystem : UpdateSystem
 {
+    public RoundsConfig roundsConfig;
     public SoundID gameplayMusic;
     private Filter filter;
     public GlobalEvent startEvent;
@@ -26,6 +27,7 @@ public sealed class PlayGameSystem : UpdateSystem
     {
         if (startEvent.IsPublished) {
             SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive).completed += ev => {
+                roundsConfig.rounds.Shuffle();
                 roundStartEvent.Publish();
                 BroAudio.Play(gameplayMusic).AsBGM();
                 };

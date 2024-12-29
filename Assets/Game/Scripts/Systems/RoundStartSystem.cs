@@ -39,9 +39,9 @@ public sealed class RoundStartSystem : UpdateSystem
                     uiComponent.uIController.roundCounter.SetText($"{currentRound.value + 1}/{roundsConfig.rounds.Count}");
 
                     List<TMP_Text> buttonsLeft = new List<TMP_Text>(uiComponent.uIController.selectionTexts);
-                    var correctAnswer = buttonsLeft[Random.Range(0, buttonsLeft.Count - 1)];
-                    var randomPresent = roundsConfig.rounds[currentRound.value].
-                    possiblePresents[Random.Range(0, roundsConfig.rounds[currentRound.value].possiblePresents.Count)];
+                    var correctAnswer = buttonsLeft.GetRandom();
+                    var randomPresent = roundsConfig.rounds[currentRound.value].possiblePresents.GetRandom();
+
                     correctAnswer.SetText(randomPresent.presentName);
                     buttonsLeft.Remove(correctAnswer);
 
@@ -59,7 +59,7 @@ public sealed class RoundStartSystem : UpdateSystem
 
                     foreach (var option in randomPresent.guessingOptions)
                     {
-                        var selectedButton = buttonsLeft[Random.Range(0, buttonsLeft.Count - 1)];
+                        var selectedButton = buttonsLeft.GetRandom();
                         selectedButton.SetText(option);
                         buttonsLeft.Remove(selectedButton);
                     }

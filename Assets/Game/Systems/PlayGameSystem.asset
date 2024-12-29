@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913184bb94a4b3a4386e61c73fc59c34, type: 3}
   m_Name: PlayGameSystem
   m_EditorClassIdentifier: 
+  roundsConfig: {fileID: 11400000, guid: cf6e1741a6221984c8c00e75da0f40da, type: 2}
   gameplayMusic:
     ID: 268435461
     _sourceAsset: {fileID: 11400000, guid: fa8f02e79b1caff448eef72c0c470806, type: 2}
